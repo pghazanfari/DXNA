@@ -3,15 +3,6 @@
 #include <iostream>
 #include "Resource.h"
 
-#include "TextureResource.h"
-#include "ModelResource.h"
-#include "VertexShaderResource.h"
-#include "PixelShaderResource.h"
-#include "SamplerStateResource.h"
-#include "InputLayoutResource.h"
-#include "MaterialPresetResource.h"
-#include "GeometryShaderResource.h"
-
 #pragma once
 
 using namespace std;
@@ -52,29 +43,21 @@ class ResourceManager
 		{
 			string ext = getFileExt(file);
 
-			if (ext.compare(".dds") == 0)
-				return new TextureResource(file);
+			//if (ext.compare(".dds") == 0) return new TextureResource(file);
 
-			if (ext.compare(".mtl") == 0)
-				return new MaterialPresetResource(file);
+			//if (ext.compare(".mtl") == 0) return new MaterialPresetResource(file);
 
-			if (ext.compare(".il") == 0)
-				return new InputLayoutResource(file);
+			//if (ext.compare(".il") == 0) return new InputLayoutResource(file);
 
-			if (ext.compare(".ss") == 0)
-				return new SamplerStateResource(file);
+			//if (ext.compare(".ss") == 0) return new SamplerStateResource(file);
 
-			if (ext.compare(".pbam") == 0)
-				return new ModelResource(file);
+			//if (ext.compare(".pbam") == 0) return new ModelResource(file);
 
-			if (ext.compare(".cvs") == 0)
-				return new VertexShaderResource(file);
+			//if (ext.compare(".cvs") == 0) return new VertexShaderResource(file);
 
-			if (ext.compare(".cps") == 0)
-				return new PixelShaderResource(file);
+			//if (ext.compare(".cps") == 0) return new PixelShaderResource(file);
 
-			if (ext.compare(".cgs") == 0)
-				return new GeometryShaderResource(file);
+			//if (ext.compare(".cgs") == 0) return new GeometryShaderResource(file);
 
 			return NULL;
 		}

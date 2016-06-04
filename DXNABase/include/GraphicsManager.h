@@ -5,13 +5,11 @@
 #include <d3d11.h>
 #include <dxgi.h>
 #include <d3dcompiler.h>
-//#include <D3DX11.h>
 #include "RenderTarget.h"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "dxguid.lib")
-//#pragma comment(lib, "d3dx11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
 
 

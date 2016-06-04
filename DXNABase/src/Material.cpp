@@ -1,6 +1,5 @@
 #include "Material.h"
 #include "ResourceManager.h"
-#include "BasicTexturedModelMaterial.h"
 
 Material::Material(const char* vs, const char* ps, const char* il) : vs_name(vs), ps_name(ps), il_name(il), gs(false)
 {
@@ -30,8 +29,7 @@ Material::~Material()
 
 Material* Material::Generate(string name)
 {
-	if (name.compare("BasicTexturedModel") == 0)
-		return new BasicTexturedModelMaterial();
+	//if (name.compare("BasicTexturedModel") == 0) return new BasicTexturedModelMaterial();
 
 	return NULL;
 }

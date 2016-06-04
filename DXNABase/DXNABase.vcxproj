@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AEB0D2F4-9A9F-4AF5-9771-52F18C9B38DC}</ProjectGuid>
+    <ProjectGuid>{854286B9-08C8-4FCB-A906-D516F9AD94F1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DXNA</RootNamespace>
+    <RootNamespace>DXNABase</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,9 +70,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)\Graphics\Particles;$(ProjectDir)\Graphics\Materials;$(ProjectDir)\Utilities;$(ProjectDir)\Resources;$(ProjectDir)\Base\Types;$(ProjectDir)\Base\Resources;$(ProjectDir)\Base\Graphics;$(ProjectDir)\Base;$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Utilities\bin\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)\src;$(SourcePath)</SourcePath>
+    <OutDir>$(SolutionDir)lib\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,55 +134,35 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Base\Graphics\GraphicsManager.cpp" />
-    <ClCompile Include="Base\Graphics\Mesh.cpp" />
-    <ClCompile Include="Base\Graphics\RenderTarget.cpp" />
-    <ClCompile Include="Base\Graphics\Window.cpp" />
-    <ClCompile Include="Base\Resources\ResourceManager.cpp" />
-    <ClCompile Include="Base\Types\Vector3.cpp" />
-    <ClCompile Include="Graphics\Materials\BasicTexturedModelMaterial.cpp" />
-    <ClCompile Include="Graphics\Materials\BasicTexturedParticleMaterial.cpp" />
-    <ClCompile Include="Resources\GeometryShaderResource.cpp" />
-    <ClCompile Include="Resources\InputLayoutResource.cpp" />
-    <ClCompile Include="Resources\MaterialPresetResource.cpp" />
-    <ClCompile Include="Resources\ModelResource.cpp" />
-    <ClCompile Include="Resources\PixelShaderResource.cpp" />
-    <ClCompile Include="Resources\SamplerStateResource.cpp" />
-    <ClCompile Include="Resources\VertexShaderResource.cpp" />
-    <ClCompile Include="Utilities\Logger.cpp" />
+    <ClInclude Include="include\BlendStates.h" />
+    <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\DoublyLinkedList.h" />
+    <ClInclude Include="include\GraphicsManager.h" />
+    <ClInclude Include="include\Lists.h" />
+    <ClInclude Include="include\Logger.h" />
+    <ClInclude Include="include\Material.h" />
+    <ClInclude Include="include\Matrix.h" />
+    <ClInclude Include="include\Mesh.h" />
+    <ClInclude Include="include\MeshDeclaration.h" />
+    <ClInclude Include="include\Model.h" />
+    <ClInclude Include="include\RenderTarget.h" />
+    <ClInclude Include="include\Resource.h" />
+    <ClInclude Include="include\ResourceManager.h" />
+    <ClInclude Include="include\SinglyLinkedList.h" />
+    <ClInclude Include="include\Types.h" />
+    <ClInclude Include="include\Vector2.h" />
+    <ClInclude Include="include\Vector3.h" />
+    <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Base\Common.h" />
-    <ClInclude Include="Base\Graphics\Camera.h" />
-    <ClInclude Include="Base\Graphics\GraphicsManager.h" />
-    <ClInclude Include="Base\Graphics\Mesh.h" />
-    <ClInclude Include="Base\Graphics\MeshDeclaration.h" />
-    <ClInclude Include="Base\Graphics\Model.h" />
-    <ClInclude Include="Base\Graphics\RenderTarget.h" />
-    <ClInclude Include="Base\Graphics\Window.h" />
-    <ClInclude Include="Base\Resources\Resource.h" />
-    <ClInclude Include="Base\Resources\ResourceManager.h" />
-    <ClInclude Include="Base\Types\DoublyLinkedList.h" />
-    <ClInclude Include="Base\Types\Lists.h" />
-    <ClInclude Include="Base\Types\Matrix.h" />
-    <ClInclude Include="Base\Types\SinglyLinkedList.h" />
-    <ClInclude Include="Base\Types\Vector2.h" />
-    <ClInclude Include="Base\Types\Vector3.h" />
-    <ClInclude Include="Graphics\Materials\BasicTexturedModelMaterial.h" />
-    <ClInclude Include="Graphics\Materials\BasicTexturedParticleMaterial.h" />
-    <ClInclude Include="Graphics\Particles\Emitter.h" />
-    <ClInclude Include="Graphics\Particles\ParticleDataBuffer.h" />
-    <ClInclude Include="Graphics\Particles\StatelessEmitter.h" />
-    <ClInclude Include="Resources\GeometryShaderResource.h" />
-    <ClInclude Include="Resources\InputLayoutResource.h" />
-    <ClInclude Include="Resources\MaterialPresetResource.h" />
-    <ClInclude Include="Resources\ModelResource.h" />
-    <ClInclude Include="Resources\PixelShaderResource.h" />
-    <ClInclude Include="Resources\SamplerStateResource.h" />
-    <ClInclude Include="Resources\TextureResource.h" />
-    <ClInclude Include="Resources\VertexShaderResource.h" />
-    <ClInclude Include="Utilities\BlendStates.h" />
-    <ClInclude Include="Utilities\Logger.h" />
+    <ClCompile Include="src\GraphicsManager.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Material.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
+    <ClCompile Include="src\RenderTarget.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
+    <ClCompile Include="src\Vector3.cpp" />
+    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
