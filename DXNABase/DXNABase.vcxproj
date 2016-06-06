@@ -140,14 +140,8 @@
     <ClInclude Include="include\GraphicsManager.h" />
     <ClInclude Include="include\Lists.h" />
     <ClInclude Include="include\Logger.h" />
-    <ClInclude Include="include\Material.h" />
     <ClInclude Include="include\Matrix.h" />
-    <ClInclude Include="include\Mesh.h" />
-    <ClInclude Include="include\MeshDeclaration.h" />
-    <ClInclude Include="include\Model.h" />
     <ClInclude Include="include\RenderTarget.h" />
-    <ClInclude Include="include\Resource.h" />
-    <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SinglyLinkedList.h" />
     <ClInclude Include="include\Types.h" />
     <ClInclude Include="include\Vector2.h" />
@@ -157,10 +151,7 @@
   <ItemGroup>
     <ClCompile Include="src\GraphicsManager.cpp" />
     <ClCompile Include="src\Logger.cpp" />
-    <ClCompile Include="src\Material.cpp" />
-    <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\RenderTarget.cpp" />
-    <ClCompile Include="src\ResourceManager.cpp" />
     <ClCompile Include="src\Vector3.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
