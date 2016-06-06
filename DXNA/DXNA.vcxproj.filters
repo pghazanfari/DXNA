@@ -3,4 +3,37 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{69f4d0ab-c4d8-47a4-a6bd-ebce0d9c3287}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Material.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\Material.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Mesh.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\MeshDeclaration.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Model.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\ResourceManager.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

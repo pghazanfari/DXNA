@@ -15,44 +15,44 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Camera.h">
+    <ClInclude Include="headers\Camera.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\GraphicsManager.h">
+    <ClInclude Include="headers\GraphicsManager.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\RenderTarget.h">
+    <ClInclude Include="headers\RenderTarget.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\Window.h">
+    <ClInclude Include="headers\Window.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\BlendStates.h">
+    <ClInclude Include="headers\DoublyLinkedList.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Lists.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Matrix.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\SinglyLinkedList.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Types.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Vector2.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Vector3.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\BlendStates.h">
       <Filter>Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="include\Logger.h">
+    <ClInclude Include="headers\Logger.h">
       <Filter>Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="include\DoublyLinkedList.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Lists.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Matrix.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SinglyLinkedList.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Types.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vector2.h">
-      <Filter>Types</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vector3.h">
-      <Filter>Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

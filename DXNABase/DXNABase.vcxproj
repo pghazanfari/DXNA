@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\headers;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)\src;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)lib\</OutDir>
   </PropertyGroup>
@@ -85,6 +85,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)headers\* $(SolutionDir)include\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -134,19 +137,19 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\BlendStates.h" />
-    <ClInclude Include="include\Camera.h" />
-    <ClInclude Include="include\DoublyLinkedList.h" />
-    <ClInclude Include="include\GraphicsManager.h" />
-    <ClInclude Include="include\Lists.h" />
-    <ClInclude Include="include\Logger.h" />
-    <ClInclude Include="include\Matrix.h" />
-    <ClInclude Include="include\RenderTarget.h" />
-    <ClInclude Include="include\SinglyLinkedList.h" />
-    <ClInclude Include="include\Types.h" />
-    <ClInclude Include="include\Vector2.h" />
-    <ClInclude Include="include\Vector3.h" />
-    <ClInclude Include="include\Window.h" />
+    <ClInclude Include="headers\BlendStates.h" />
+    <ClInclude Include="headers\Camera.h" />
+    <ClInclude Include="headers\DoublyLinkedList.h" />
+    <ClInclude Include="headers\GraphicsManager.h" />
+    <ClInclude Include="headers\Lists.h" />
+    <ClInclude Include="headers\Logger.h" />
+    <ClInclude Include="headers\Matrix.h" />
+    <ClInclude Include="headers\RenderTarget.h" />
+    <ClInclude Include="headers\SinglyLinkedList.h" />
+    <ClInclude Include="headers\Types.h" />
+    <ClInclude Include="headers\Vector2.h" />
+    <ClInclude Include="headers\Vector3.h" />
+    <ClInclude Include="headers\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GraphicsManager.cpp" />
