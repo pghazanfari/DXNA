@@ -107,7 +107,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir -p $(SolutionDir)build\include
+      <Command>mkdir $(SolutionDir)build\include
 xcopy /Y /E $(ProjectDir)include $(SolutionDir)build\include
 </Command>
     </PostBuildEvent>
