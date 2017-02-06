@@ -111,7 +111,7 @@ class Camera
 		{
 			if (updateView)
 			{
-				view = Matrix::CreateLookAt(position, target, up);//XMMatrixLookAtLH(position, target, up);
+				view = Matrix::CreateLookAt(position, target, up);
 				updateView = false;
 			}
 			return view;

@@ -42,7 +42,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -75,6 +75,11 @@
     <OutDir>$(SolutionDir)lib\</OutDir>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\DXNABase\build\include;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)build\lib\</OutDir>
+    <LibraryPath>$(ProjectDir)..\DXNABase\build\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -101,6 +106,11 @@
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir -p $(SolutionDir)build\include
+xcopy /Y /E $(ProjectDir)include $(SolutionDir)build\include
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -142,12 +152,12 @@
     <ClCompile Include="src\Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\Material.h" />
-    <ClInclude Include="headers\Mesh.h" />
-    <ClInclude Include="headers\MeshDeclaration.h" />
-    <ClInclude Include="headers\Model.h" />
-    <ClInclude Include="headers\Resource.h" />
-    <ClInclude Include="headers\ResourceManager.h" />
+    <ClInclude Include="include\Material.h" />
+    <ClInclude Include="include\Mesh.h" />
+    <ClInclude Include="include\MeshDeclaration.h" />
+    <ClInclude Include="include\Model.h" />
+    <ClInclude Include="include\Resource.h" />
+    <ClInclude Include="include\ResourceManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

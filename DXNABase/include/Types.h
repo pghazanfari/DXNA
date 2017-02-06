@@ -6,4 +6,3 @@
 #include "Matrix.h"
 
 #pragma once
-

@@ -15,43 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\Camera.h">
+    <ClInclude Include="include\GraphicsManager.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\GraphicsManager.h">
+    <ClInclude Include="include\RenderTarget.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\RenderTarget.h">
+    <ClInclude Include="include\Window.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Window.h">
+    <ClInclude Include="include\Camera.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\DoublyLinkedList.h">
+    <ClInclude Include="include\DoublyLinkedList.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Lists.h">
+    <ClInclude Include="include\Lists.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Matrix.h">
+    <ClInclude Include="include\Matrix.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\SinglyLinkedList.h">
+    <ClInclude Include="include\SinglyLinkedList.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Types.h">
+    <ClInclude Include="include\Types.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Vector2.h">
+    <ClInclude Include="include\Vector2.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Vector3.h">
+    <ClInclude Include="include\Vector3.h">
       <Filter>Types</Filter>
     </ClInclude>
-    <ClInclude Include="headers\BlendStates.h">
+    <ClInclude Include="include\BlendStates.h">
       <Filter>Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Logger.h">
+    <ClInclude Include="include\Logger.h">
       <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>

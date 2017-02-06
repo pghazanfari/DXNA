@@ -44,7 +44,7 @@ class Material
 
 		inline void Apply() 
 		{
-			ID3D11DeviceContext* context = GraphicsManager::currentContext();
+			ID3D11DeviceContext* context = GraphicsManager::CurrentContext();
 			context->VSSetShader(vertexShader, 0, 0);
 			context->PSSetShader(pixelShader, 0, 0);
 			if (gs) context->GSSetShader(geometryShader, 0, 0);

@@ -1,75 +1,72 @@
 #include "Window.h"
 
-int Window::counter = 0;
-const string Window::BaseName = "WC";
-
- int Window::getLocationX()
+ int Window::x() const
 {
 	RECT rect;
-	GetWindowRect(handle, &rect);
+	GetWindowRect(wHandle, &rect);
 	return rect.left;
 }
 
- void Window::setLocationX(const int& x)
+ void Window::setX(const int& x)
 {
-	MoveWindow(handle, x, getLocationY(), getWidth(), getHeight(), true);
+	MoveWindow(wHandle, x, y(), width(), height(), true);
 }
 
- int Window::getLocationY()
+ int Window::y() const
 {
 	RECT rect;
-	GetWindowRect(handle, &rect);
+	GetWindowRect(wHandle, &rect);
 	return rect.top;
 }
 
- void Window::setLocationY(const int& y)
+ void Window::setY(const int& y)
 {
-	MoveWindow(handle, getLocationY(), y, getWidth(), getHeight(), true);
+	MoveWindow(wHandle, x(), y, width(), height(), true);
 }
 
- int Window::getWidth()
+ int Window::width() const 
 {
 	RECT rect;
-	GetWindowRect(handle, &rect);
+	GetWindowRect(wHandle, &rect);
 	return rect.right - rect.left;
 }
 
  void Window::setWidth(const int& w)
 {
-	MoveWindow(handle, getLocationX(), getLocationY(), w, getHeight(), true);
+	MoveWindow(wHandle, x(), y(), w, height(), true);
 }
 
- int Window::getHeight()
+ int Window::height() const
 {
 	RECT rect;
-	GetWindowRect(handle, &rect);
+	GetWindowRect(wHandle, &rect);
 	return rect.bottom - rect.top;
 }
 
  void Window::setHeight(const int& h)
 {
-	MoveWindow(handle, getLocationX(), getLocationY(), getWidth(), h, true);
+	MoveWindow(wHandle, x(), y(), width(), h, true);
 }
 
- string Window::getTitle() const
+ string Window::title() const
 {
-	int bufsize = GetWindowTextLength(handle) + 1;
+	int bufsize = GetWindowTextLength(wHandle) + 1;
 	basic_string<TCHAR>  title(bufsize, 0);
-	GetWindowText(handle, &title[0], bufsize + 1);
+	GetWindowText(wHandle, &title[0], bufsize + 1);
 
 	return title;
 }
 
  void Window::setTitle(const string& t)
 {
-	SetWindowText(handle, t.c_str());
+	SetWindowText(wHandle, t.c_str());
 }
 
- long Window::getStyle()
+ long Window::style() const
  {
-	 return GetWindowLong(handle, GWL_STYLE);
+	 return GetWindowLong(wHandle, GWL_STYLE);
  }
  void Window::setStyle(long style)
  {
-	 SetWindowLong(handle, GWL_STYLE, style);
+	 SetWindowLong(wHandle, GWL_STYLE, style);
  }

@@ -6,71 +6,80 @@
 
 using namespace std;
 
+/*
+ZeroMemory(&wclass, sizeof(WNDCLASSEX));
+wclass.cbSize = sizeof(WNDCLASSEX);
+wclass.style = CS_HREDRAW | CS_VREDRAW;
+wclass.hCursor = LoadCursor(NULL, IDC_ARROW);
+wclass.hbrBackground = (HBRUSH)COLOR_WINDOW;
+wclass.lpszClassName = cname.c_str();
+wclass.hInstance = hInstance;
+wclass.lpfnWndProc = proc;
+RegisterClassEx(&wclass);
+*/
+
 class Window
 {
 	private:
-		static int counter;
-		static const string BaseName;
-
-		HWND handle;
-		WNDCLASSEX wclass;
-		string classname;
-
+		HWND wHandle;
 		inline Window() {}
 
 	public:
-		inline Window(HINSTANCE hInstance, WNDPROC proc, string cname) : handle(0), classname(cname)
-		{
-			ZeroMemory(&wclass, sizeof(WNDCLASSEX));
-			wclass.cbSize = sizeof(WNDCLASSEX);
-			wclass.style = CS_HREDRAW | CS_VREDRAW;
-			wclass.hCursor = LoadCursor(NULL, IDC_ARROW);
-			wclass.hbrBackground = (HBRUSH)COLOR_WINDOW;
-			wclass.lpszClassName = cname.c_str();
-			wclass.hInstance = hInstance;
-			wclass.lpfnWndProc = proc;
-
-			RegisterClassEx(&wclass);
-
-			// create the window and use the result as the handle
-			handle = CreateWindowEx(NULL,
-				classname.c_str(),    // name of the window class
-				"",   // title of the window
+		inline Window(const HINSTANCE& hInstance, Window* const parent, const string& className, const string& title, const int& x, const int& y, const int& width, const int& height) {
+			wHandle = CreateWindowEx(NULL,
+				className.c_str(),    // name of the window class
+				title.c_str(),   // title of the window
 				WS_OVERLAPPEDWINDOW,    // window style
-				0,    // x-position of the window
-				0,    // y-position of the window
-				640,    // width of the window
-				480,    // height of the window
+				x,    // x-position of the window
+				y,    // y-position of the window
+				width,    // width of the window
+				height,    // height of the window
+				parent->handle(),    // we have no parent window, NULL
+				NULL,    // we aren't using menus, NULL
+				hInstance,    // application handle
+				NULL);    // used with multiple windows, NULL
+		}
+
+		inline Window(const HINSTANCE& hInstance, const string& className, const string& title, const int& x, const int& y, const int& width, const int& height) {
+			wHandle = CreateWindowEx(NULL,
+				className.c_str(),    // name of the window class
+				title.c_str(),   // title of the window
+				WS_OVERLAPPEDWINDOW,    // window style
+				x,    // x-position of the window
+				y,    // y-position of the window
+				width,    // width of the window
+				height,    // height of the window
 				NULL,    // we have no parent window, NULL
 				NULL,    // we aren't using menus, NULL
 				hInstance,    // application handle
 				NULL);    // used with multiple windows, NULL
 		}
+
 		inline ~Window()
 		{
-			SendMessage(handle, WM_DESTROY, NULL, NULL);
+			SendMessage(wHandle, WM_DESTROY, NULL, NULL);
 		}
 
 		inline void show(const int& nCmdShow) 
 		{
-			ShowWindow(handle, nCmdShow);
+			ShowWindow(wHandle, nCmdShow);
 		}
 
-		inline HWND getHandle() { return handle; }
+		inline HWND handle() const { return wHandle; }
 
-		int getLocationX();
-		void setLocationX(const int& x);
-		int getLocationY();
-		void setLocationY(const int& y);
+		int x() const;
+		void setX(const int& x);
+		int y() const;
+		void setY(const int& y);
 
-		int getWidth();
+		int width() const;
 		void setWidth(const int& w);
-		int getHeight();
+		int height() const;
 		void setHeight(const int& h);
 
-		string getTitle() const;
+		string title() const;
 		void setTitle(const string& t);
 
-		long getStyle();
+		long style() const;
 		void setStyle(long style);
 };

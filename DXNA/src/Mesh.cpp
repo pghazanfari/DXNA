@@ -17,7 +17,7 @@ Mesh::Mesh(MeshVertex* vertices, UINT* indices, const UINT& count, const UINT& i
 	vbd.StructureByteStride = 0;
 	D3D11_SUBRESOURCE_DATA vinitData;
 	vinitData.pSysMem = vertices;
-	hr = GraphicsManager::currentDevice()->CreateBuffer(&vbd, &vinitData, &vbuffer);
+	hr = GraphicsManager::CurrentDevice()->CreateBuffer(&vbd, &vinitData, &vbuffer);
 	if (FAILED(hr))
 		MessageBox(NULL, "Error Creating Vertex Buffer.", "DirectX Error", MB_OK);
 
@@ -31,7 +31,7 @@ Mesh::Mesh(MeshVertex* vertices, UINT* indices, const UINT& count, const UINT& i
 	ibd.StructureByteStride = 0;
 	D3D11_SUBRESOURCE_DATA iinitData;
 	iinitData.pSysMem = indices;
-	hr = GraphicsManager::currentDevice()->CreateBuffer(&ibd, &iinitData, &ibuffer);
+	hr = GraphicsManager::CurrentDevice()->CreateBuffer(&ibd, &iinitData, &ibuffer);
 	if (FAILED(hr))
 		MessageBox(NULL, "Error Creating Index Buffer.", "DirectX Error", MB_OK);
 }
@@ -50,7 +50,7 @@ Mesh::Mesh(MeshVertex* vertices, const UINT& count, Material* sh) : material(sh)
 	vbd.StructureByteStride = 0;
 	D3D11_SUBRESOURCE_DATA vinitData;
 	vinitData.pSysMem = vertices;
-	hr = GraphicsManager::currentDevice()->CreateBuffer(&vbd, &vinitData, &vbuffer);
+	hr = GraphicsManager::CurrentDevice()->CreateBuffer(&vbd, &vinitData, &vbuffer);
 	if (FAILED(hr))
 		MessageBox(NULL, "Error Creating Vertex Buffer.", "DirectX Error", MB_OK);
 }
@@ -62,7 +62,7 @@ void Mesh::setMaterial(Material* sh)
 
 void Mesh::draw()
 {
-	ID3D11DeviceContext* context = GraphicsManager::currentContext();
+	ID3D11DeviceContext* context = GraphicsManager::CurrentContext();
 
 	context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	UINT stride = sizeof(MeshVertex);

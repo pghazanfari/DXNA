@@ -95,8 +95,8 @@ class GraphicsManager
 
 		inline IDXGISwapChain* getSwapChan() { return swapChain; }
 
-		static ID3D11Device* currentDevice();
-		static ID3D11DeviceContext* currentContext();
+		static ID3D11Device* CurrentDevice();
+		static ID3D11DeviceContext* CurrentContext();
 
 		static HRESULT CreateInputLayout(const std::vector<char>& bytes, ID3D11InputLayout** pInputLayout);
 		static ID3D11Buffer* CreateConstantBuffer(void* data, size_t sz);
